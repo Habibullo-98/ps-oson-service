@@ -1,0 +1,15 @@
+﻿services:
+  ps-oson-service:
+    image: ps-oson-service
+    container_name: oson
+    build:
+      context: .
+      dockerfile: ps-oson-service/Dockerfile
+    ports:
+      - "10006:8080"
+    restart: always
+    volumes:
+      - log-data:/app/logs
+    
+volumes:
+  log-data:

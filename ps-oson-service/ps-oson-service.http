@@ -1,0 +1,43 @@
+@HostAddress = http://10.200.101.41:10006
+
+### Check Account
+POST {{HostAddress}}/CheckAccount HTTP/1.1
+Host: localhost:44393
+Content-Type: application/json
+
+{
+  "id": "1234",
+  "callsigNumber": "988787063",
+  "amount": 1,
+  "serviceId": 6454,
+  "params": [
+    {
+      "comment": "PayType",
+      "values": "TOP_UP"
+    }
+  ]
+}
+
+### Pay
+POST {{HostAddress}}/Pay HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "123",
+  "callsigNumber": "11111",
+  "amount": 1,
+  "serviceId": 6454,
+  "params": [
+    {
+      "comment": "PayType",
+      "values": "TOP_UP"
+    }
+  ]
+}
+
+### Get Service List
+GET {{HostAddress}}/Services HTTP/1.1
+
+
+### Get Deposit
+GET {{HostAddress}}/Deposit HTTP/1.1
